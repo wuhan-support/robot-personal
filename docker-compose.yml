@@ -1,0 +1,12 @@
+version: '2'
+
+services:
+  ncov_robot:
+    build: .
+    volumes:
+     - .:/ncov_robot
+    depends_on:
+     - redis
+  redis:
+    image: redis
+    command: redis-server
